@@ -23,7 +23,7 @@ saveBtn.click(function () {
                 "Authorization": 'Bearer ' + getCookie('AccessToken')
             }
         }).then(() => {
-            reverseAlarm.removeClass('toggle');
+            $('.modal-container').removeClass('modal-toggle');
         })
     })
 })

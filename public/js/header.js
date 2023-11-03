@@ -45,4 +45,8 @@ function toTime(nowDate) {
 }
 
 date.html(toLongDate(new Date(Date.now())));
-time.html(toTime(new Date(Date.now())))
+time.html(toTime(new Date(Date.now())));
+setInterval(function () {
+    date.html(toLongDate(new Date(Date.now())));
+    time.html(toTime(new Date(Date.now())));
+}, 1000)

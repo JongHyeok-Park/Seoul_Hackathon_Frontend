@@ -80,7 +80,8 @@ $(document).ready(function () {
     //
 
         loginCheck.then((res) => {
-            $('#user-page').css("filter", "filter: invert(26%) sepia(99%) saturate(1769%) hue-rotate(243deg) brightness(86%) contrast(95%)");
+            $('#user-page').css("filter", "invert(26%) sepia(99%) saturate(1769%) hue-rotate(243deg) brightness(86%) contrast(95%)");
+            $('#user-page').css("border", "");
             $('#user-page').on('click', function (e) {
                 console.log('click');
                 if (!modal.hasClass('modal-toggle')) {

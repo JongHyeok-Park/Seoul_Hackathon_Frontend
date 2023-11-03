@@ -19,7 +19,6 @@ $.ajax({
         }
 
         arr.sort((a, b) => b[1] - a[1]);
-        console.log(arr);
         let index;
         switch (arr[0][0]) {
             case '월': index = 0; break;
@@ -30,8 +29,6 @@ $.ajax({
             case '토': index = 5; break;
             case '일': index = 6; break;
         }
-
-        console.log(index);
         $('.bar-graph').eq(index).addClass("rank");
     }
 })

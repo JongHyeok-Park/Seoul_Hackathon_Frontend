@@ -11,13 +11,11 @@ $.ajax({
 
         let attribute = "";
         times.forEach((t, i) => {
-            let template;
-            template = `<li>0${i + 1}<span>${Number(t)}:00 ~ ${Number(t) + 1}:00</span></li>`;
             let sector = (Number(t) / 24 * 360).toString();
             attribute = attribute + "#CFBFFF " + sector + "deg, " + "#6A43D7 " + sector + "deg, " + "#6A43D7 " + (Number(sector) + 15).toString() + "deg, " + "#CFBFFF "
                 + (Number(sector) + 15).toString() + "deg, ";
 
-            arr.push([i, res[t]]);
+            arr.push([t, res[t]]);
         })
         arr.sort((a, b) => b[1] - a[1]);
 

@@ -29,8 +29,6 @@ $.ajax({
             case '토': index = 5; break;
             case '일': index = 6; break;
         }
-
-        console.log(index);
         $('.bar-graph').eq(index).addClass("rank");
     }
 })

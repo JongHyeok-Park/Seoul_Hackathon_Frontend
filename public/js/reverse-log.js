@@ -1,17 +1,12 @@
 const speedTable = $('#speed-table');
-const socket = new WebSocket(`ws://${config.ServerUrl}/speed`);
+const socket = new WebSocket(`wss://${config.ServerUrl}/reverse-run`);
 
 function toDate(date) {
     let yyyy = date.substring(0, 4);
     let mm = date.substring(5, 7);
-    let dd = date.substring(8, 9);
-    mm = Number(mm) - 1;
+    let dd = date.substring(8, 10);
 
-    let stringNewDate = new Date(yyyy, mm, dd);
-    stringNewDate.setDate(stringNewDate.getDate());
-
-    return ((stringNewDate.getMonth() + 1) > 9 ? (stringNewDate.getMonth() + 1).toString() : "0" + (stringNewDate.getMonth() + 1)) +
-        "/" + (stringNewDate.getDate() > 9 ? stringNewDate.getDate().toString() : "0" + stringNewDate.getDate().toString());
+    return mm + "/" + dd;
 }
 
 function toTimeNew(nowDate) {
@@ -29,7 +24,7 @@ socket.onmessage = function (e) {
             <td>${toDate(data.created_at)}</td>
             <td>${toTimeNew(data.created_at)}</td>
             <td>${data.region}</td>
-            <td><img style="rotate: ${data.derection}deg" src="../public/assets/arrow-icon.png"></td>
+            <td><img style="rotate: ${data.direction}deg" src="../public/assets/arrow-icon.png"></td>
         </tr>
     `;
     speedTable.append(template);
