@@ -1,9 +1,10 @@
 const accessTime = 2 * 60;
 const refreshTime = 24 * 60 * 7;
+const modal = $('.modal-container');
 
 // aside 에 load
 $(document).ready(function () {
-    $(".side-bar").load("../../pages/include/aside.html", function () {
+    $(".side-bar").load("../../pages/aside.html", function () {
         let path = window.location.pathname;
         let page = path.split("/").pop();
 
@@ -26,26 +27,36 @@ $(document).ready(function () {
             window.location.href = "Reverse.html";
         })
 
-    //     if (!getCookie('AccessToken')) {
-    //         if (!!getCookie('RefreshToken')) {
-    //             $.ajax({
-    //                 url: ServerURL + "/api/all/login",
-    //                 type: 'PATCH',
-    //                 contentType: "application/json; charset=UTF-8",
-    //                 data: JSON.stringify({
-    //                     "refreshToken": `${getCookie('RefreshToken')}`
-    //                 }),
-    //                 headers: {
-    //                     "Authorization": 'Bearer ' + getCookie('RefreshToken')
-    //                 }
-    //             }).then((res) => {
-    //                 setCookie('AccessToken', res.accessToken, accessTime);
-    //                 setCookie('RefreshToken', res.refreshToken, refreshTime);
-    //                 setCookie('UserID', res.userId, accessTime);
-    //                 window.location.reload();
-    //             })
-    //         }
-    //     }
+        $('.modal-background').click(function () {
+            if (!modal.hasClass('modal-toggle')) {
+                modal.addClass('modal-toggle');
+                console.log('add');
+            } else {
+                modal.removeClass('modal-toggle');
+                console.log('remove');
+            }
+        })
+
+        if (!getCookie('AccessToken')) {
+            if (!!getCookie('RefreshToken')) {
+                $.ajax({
+                    url: ServerURL + "/api/all/login",
+                    type: 'PATCH',
+                    contentType: "application/json; charset=UTF-8",
+                    data: JSON.stringify({
+                        "refreshToken": `${getCookie('RefreshToken')}`
+                    }),
+                    headers: {
+                        "Authorization": 'Bearer ' + getCookie('RefreshToken')
+                    }
+                }).then((res) => {
+                    setCookie('AccessToken', res.accessToken, accessTime);
+                    setCookie('RefreshToken', res.refreshToken, refreshTime);
+                    setCookie('UserID', res.userId, accessTime);
+                    window.location.reload();
+                })
+            }
+        }
     //
     //     $('#login').click(function (e) {
     //         window.location.href = '';
@@ -67,14 +78,23 @@ $(document).ready(function () {
     //         })
     //     })
     //
-    //     loginCheck.then((res) => {
-    //         $('#login').css('display', 'none');
-    //         $('.current-user').css('display', 'inline-block');
-    //         $('#current-user-img').attr('src', res.imgUrl);
-    //         $('#current-user-name').html(res.name);
-    //     }).catch(() => {
-    //         $('#login').css('display', 'inline-block');
-    //         $('.current-user').css('display', 'none');
-    //     })
+
+        loginCheck.then((res) => {
+            $('#user-page').css("filter", "filter: invert(26%) sepia(99%) saturate(1769%) hue-rotate(243deg) brightness(86%) contrast(95%)");
+            $('#user-page').on('click', function (e) {
+                console.log('click');
+                if (!modal.hasClass('modal-toggle')) {
+                    modal.addClass('modal-toggle');
+                    console.log('add');
+                } else {
+                    modal.removeClass('modal-toggle');
+                    console.log('remove');
+                }
+            })
+        }).catch(() => {
+            $('#user-page').on('click', function (e) {
+                window.location.href = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=014fd6985cda29d0e5fe4263fc3c366b&redirect_uri=https://seoul-aiot-jiozx.run.goorm.site/api/auth/login";
+            })
+        })
     });
 })
