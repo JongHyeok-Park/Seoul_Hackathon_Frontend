@@ -40,7 +40,7 @@ $(document).ready(function () {
         if (!getCookie('AccessToken')) {
             if (!!getCookie('RefreshToken')) {
                 $.ajax({
-                    url: ServerURL + "/api/all/login",
+                    url: "https://" + config.ServerUrl + "/api/auth/login",
                     type: 'PATCH',
                     contentType: "application/json; charset=UTF-8",
                     data: JSON.stringify({
@@ -93,7 +93,7 @@ $(document).ready(function () {
             })
         }).catch(() => {
             $('#user-page').on('click', function (e) {
-                window.location.href = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=014fd6985cda29d0e5fe4263fc3c366b&redirect_uri=https://seoul-aiot-jiozx.run.goorm.site/api/auth/login";
+                window.location.href = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=014fd6985cda29d0e5fe4263fc3c366b&redirect_uri=https://seoul-aiot-jiozx.run.goorm.site/login.html";
             })
         })
     });
