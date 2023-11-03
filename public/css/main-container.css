@@ -1,0 +1,377 @@
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: 1s step-end infinite blink;
+}
+
+.main-container {
+    margin-left: 270px;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    padding-left: 60px;
+    padding-top: 60px;
+    width: 100%;
+}
+
+#date {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+}
+
+#time {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px; /* 150% */
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
+
+#subtitle {
+    color: rgba(106, 67, 215, 0.60);
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 173.333% */
+    letter-spacing: -0.375px;
+    margin-bottom: 0;
+}
+
+.main-inner {
+    display: inline-block;
+}
+
+.left-contents {
+    float: left;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+}
+
+#map {
+    margin-bottom: 115px;
+}
+
+.small-title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; /* 173.333% */
+    letter-spacing: -0.375px;
+    margin-bottom: 1px;
+}
+
+#map-img {
+    width: 410px;
+    height: 370px;
+    margin-bottom: 20px;
+}
+
+.log-container {
+    width: 410px;
+    height: 120px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#log-header {
+    position: absolute;
+    background: white;
+}
+
+th {
+    color: #999;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.5px; /* 150% */
+    letter-spacing: -0.375px;
+}
+
+th:nth-child(1) {
+    width: 85px;
+}
+
+th:nth-child(2) {
+    width: 95px;
+}
+
+th:nth-child(3) {
+    width: 180px;
+}
+
+th:nth-child(4) {
+    width: 78px;
+}
+
+tr td:nth-child(1) {
+    width: 85px;
+}
+
+tr td:nth-child(2) {
+    width: 95px;
+}
+
+tr td:nth-child(3) {
+    width: 180px;
+}
+
+#speed-table td {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.5px; /* 150% */
+    letter-spacing: -0.375px;
+}
+
+.speed-data {
+    width: 50px !important;
+    padding: 0;
+    overflow: hidden;
+}
+
+.right-contents {
+    float: left;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+}
+
+.tiny-title {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.5px; /* 150% */
+    letter-spacing: -0.325px;
+}
+
+.box {
+    width: 456px;
+    height: 207px;
+    border-radius: 16px;
+    border: 0.5px solid #DBDBDB;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tiny-title > img {
+    margin-right: 10px;
+}
+
+.box-left {
+    width: 100%;
+    padding: 13px;
+}
+
+.box-right {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px;
+}
+
+.chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.chart::after {
+    content: "";
+    width: 130px;
+    height: 130px;
+    background: white;
+    border-radius: 50%;
+    display: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chart-bar {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    position: absolute;
+    background: conic-gradient(#6A43D7 0deg, #6A43D7 100deg, #CFBFFF 100deg);
+}
+
+.label-container {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+.label-container * {
+    position: absolute;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+}
+
+.label0 {
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #000;
+    font-family: Pretendard;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 200% */
+    letter-spacing: -0.2px;
+}
+
+.label6 {
+    top: 50%;
+    left: 130px;
+    transform: translate(-50%, -50%);
+
+    color: #000;
+    font-family: Pretendard;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 200% */
+    letter-spacing: -0.2px;
+}
+
+.label12 {
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #000;
+    font-family: Pretendard;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 200% */
+    letter-spacing: -0.2px;
+}
+
+.label18 {
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%, -50%);
+
+    color: #000;
+    font-family: Pretendard;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 200% */
+    letter-spacing: -0.2px;
+}
+
+.ranking {
+    list-style: none;
+    margin-top: 34px;
+}
+
+.ranking > li {
+    padding: 5px 15px;
+    border-radius: 100px;
+
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; /* 100% */
+    letter-spacing: -0.35px;
+}
+
+.ranking > li:nth-child(1) {
+    background-color: rgba(106, 67, 215, 0.50);
+}
+
+.ranking > li > span {
+    margin-left: 20px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; /* 100% */
+    letter-spacing: -0.35px;
+}
+
+#map-circle {
+    width: 150px;
+    height: 150px;
+}
+
+.graph-box {
+    padding: 13px;
+    width: 456px;
+    height: 225px;
+    border-radius: 16px;
+    border: 0.5px solid #DBDBDB;
+    margin-bottom: 5px;
+}
+
+.day {
+    color: #000;
+    font-family: Pretendard;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 150% */
+    letter-spacing: -0.325px;
+    flex-shrink: 0;
+}
+
+.graph-lists {
+    list-style: none;
+}
+
+.graph-lists > li {
+    line-height: 15px;
+    display: flex;
+}
+
+.bar-graph {
+    width: 100%;
+    background-color: #CFBFFF;
+    border-radius: 10px;
+    margin: 5px 10px;
+}
+
+.rank {
+    background-color: #6A43D7;
+}

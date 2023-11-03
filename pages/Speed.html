@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>과속</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/sidebar.css">
+    <link rel="stylesheet" href="../public/css/main-container.css">
+    <link rel="stylesheet" href="../public/css/modal.css">
+</head>
+<body>
+    <aside class="side-bar">
+    </aside>
+    <section class="main-container">
+        <div class="modal-background">
+                <div class="modal-container">
+                        <div class="modal-title">내 주위의 역주행,<br>내 주위의 과속</div>
+                        <div class="modal-content">
+                                <div class="modal-illustration">이메일을 입력해주세요!<br>주위에서 발생하는 역주행과 과속 알림을 받아보실 수 있어요.</div>
+                                <div class="email">
+                                        <div class="input-title">이메일</div>
+                                        <div class="input-bar">hangangbike@hangang.com</div>
+                                </div>
+                                <div class="alarm">
+                                        <div class="alarm-reverse">
+                                                <div class="input-title">역주행 알림</div>
+                                                <div class="alarm-button toggle">
+                                                        <div class="button-margin">
+                                                                <span class="circle-button">ON</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="alarm-speed">
+                                                <div class="input-title">과속 알림</div>
+                                                <div class="alarm-button">
+                                                        <div class="button-margin">
+                                                                <span class="circle-button">OFF</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="save">
+                                        <div class="save-title">저장할래요</div>
+                                        <div class="save-icon"><img src="../public/assets/checked.png"></div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class="main-inner">
+        <section class="header">
+                <h4 id="date">2023년 09월 27일 수요일</h4>
+                <h1 id="time">13:47</h1>
+                <p id="subtitle">내 주위의 과속을 살펴보세요.</p>
+        </section>
+        <section class="contents">
+                <div class="left-contents">
+                        <div id="map">
+                                <h5 class="small-title">어디에서 과속이 일어나고 있을까?</h5>
+                                <img id="map-img" src="../public/assets/map.png">
+                        </div>
+                        <div id="log">
+                                <h5 class="small-title">실시간 과속 기록</h5>
+                                <div class="log-container">
+                                        <table id="log-header">
+                                                <tr>
+                                                        <th>날짜</th>
+                                                        <th>시간</th>
+                                                        <th>위치</th>
+                                                        <th>속력</th>
+                                                </tr>
+                                        </table>
+                                        <table id="speed-table">
+                                        </table>
+                                </div>
+                        </div>
+                </div>
+                <div class="right-contents">
+                        <h5 class="small-title">최근의 과속 통계</h5>
+                        <div class="box">
+                                <div class="box-left">
+                                        <h6 class="tiny-title">
+                                                <img id="clock-icon" src="../public/assets/time-icon.png">
+                                                몇시에 가장 많이 발생할까?
+                                        </h6>
+                                        <ul class="ranking" id="ranking-time">
+<!--                                                <li>01<span>16:00-20:00</span></li>-->
+<!--                                                <li>02<span>6:00-9:30</span></li>-->
+<!--                                                <li>03<span>11:30-12:30</span></li>-->
+                                        </ul>
+                                </div>
+                                <div class="box-right">
+                                        <div class="chart">
+                                                <div class="chart-bar"></div>
+                                                <div class="label-container">
+                                                        <span class="label0">0</span>
+                                                        <span class="label6">6</span>
+                                                        <span class="label12">12</span>
+                                                        <span class="label18">18</span>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="box">
+                                <div class="box-left">
+                                        <h6 class="tiny-title">
+                                                <img id="location-icon" src="../public/assets/location-icon.png">
+                                                어디서 가장 많이 발생할까?
+                                        </h6>
+                                        <ul class="ranking" id="ranking-place">
+<!--                                                <li>01<span>반포 한강공원</span></li>-->
+<!--                                                <li>02<span>잠실 매점 2호점 앞</span></li>-->
+<!--                                                <li>03<span>잠원 화장실03 앞</span></li>-->
+                                        </ul>
+                                </div>
+                                <div class="box-right">
+                                        <img id="map-circle" src="../public/assets/map-circle.png">
+                                </div>
+                        </div>
+                        <div class="graph-box">
+                                <h6 class="tiny-title">
+                                        <img id="calender-icon" src="../public/assets/calender-icon.png">
+                                        언제 가장 많이 발생할까?
+                                </h6>
+                                <div class="graph-container">
+                                        <ul class="graph-lists">
+
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+        </section>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    <script src="../public/js/server.js"></script>
+    <script src="../public/js/aside.js"></script>
+    <script src="../public/js/header.js"></script>
+    <script src="../public/js/speed-log.js"></script>
+    <script src="../public/js/speed-chart.js"></script>
+    <script src="../public/js/speed-graph.js"></script>
+    <script src="../public/js/speed-region.js"></script>
+</body>
+</html>
